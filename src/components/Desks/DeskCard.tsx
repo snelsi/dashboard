@@ -29,13 +29,6 @@ const Card = styled.div`
     font-size: 24px;
     text-decoration: none;
   }
-
-  margin-right: 16px;
-
-  @media (max-width: 600px) {
-    margin-right: 0;
-    margin-bottom: 16px;
-  }
 `;
 
 const Tag = styled.div`

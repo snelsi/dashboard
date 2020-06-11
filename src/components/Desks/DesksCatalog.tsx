@@ -16,9 +16,19 @@ const Catalog = styled.div`
     width: 300px;
   }
 
+  & > a {
+    margin-right: 16px;
+  }
+
   @media (max-width: 600px) {
     flex-direction: column;
+    padding: 16px;
     width: 100%;
+
+    & > a {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
 
     & > * {
       width: 100%;
