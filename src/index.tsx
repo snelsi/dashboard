@@ -4,9 +4,12 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 
 import { Desks, DeskOverview, NotFound } from "pages";
 
+import { WithApollo } from "utils";
+
 import "styles.css";
 
 const App = () => (
+  <WithApollo>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -20,6 +23,7 @@ const App = () => (
         </Route>
       </Switch>
     </Router>
+  </WithApollo>
 );
 
 render(<App />, document.getElementById("root"));
