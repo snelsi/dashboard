@@ -44,6 +44,12 @@ export const EditTaskModalForm: React.FC<CreateTaskModalFormProps> = ({
   });
   const [deleteTask] = useDeleteTask(id);
 
+  const onClose = () => {
+    setDescription(initialDescription);
+    setStatus(initialStatus);
+    closeModal();
+  };
+
   const createNewDesk = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateTask().then(() => {
@@ -52,7 +58,7 @@ export const EditTaskModalForm: React.FC<CreateTaskModalFormProps> = ({
   };
 
   return (
-    <Modal open={isOpen} onClose={closeModal}>
+    <Modal open={isOpen} onClose={onClose}>
       <Form onSubmit={createNewDesk}>
         <div className="header">
           <h2>Редактировать задачу</h2>
