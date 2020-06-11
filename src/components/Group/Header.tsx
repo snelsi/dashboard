@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ group }) => {
   const [currentName, setName] = React.useState(group.name);
   const debouncedName = useThrottle(currentName);
   const [updateName] = useGroupName({ id: group.id, name: currentName });
-  const [deleteGroup] = useDeleteGroup(group.id);
+  const [deleteGroup, { loading }] = useDeleteGroup(group.id);
 
   React.useEffect(() => {
     if (debouncedName && group.name !== debouncedName) {
@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ group }) => {
         onChange={(newValue) => setName(newValue.target.value)}
       />
       {group.tasks.length === 0 && (
-        <TrashButton onClick={() => deleteGroup()} />
+        <TrashButton onClick={() => deleteGroup()} disabled={loading} />
       )}
     </Wrapper>
   );
