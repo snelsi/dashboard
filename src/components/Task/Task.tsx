@@ -11,9 +11,9 @@ interface TaskProps {
 }
 
 const Wrapper = styled.div`
-  background-color: white;
+  background-color: rgba(248, 248, 250, 1);
   border-radius: 0.25em;
-  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.2);
 
   cursor: pointer;
 
@@ -21,9 +21,6 @@ const Wrapper = styled.div`
   padding: 0.5em 1em;
   position: relative;
   overflow: hidden;
-
-  background-color: rgba(248, 248, 250, 1);
-  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.2);
 `;
 
 const Tag = styled.div`
