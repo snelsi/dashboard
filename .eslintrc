@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "alloy",
+    "alloy/react",
+    "alloy/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:testing-library/recommended"
+  ],
+  "plugins": ["jsx-a11y", "testing-library"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-interface": "off",
+    "jsx-a11y/no-autofocus": "off"
+  }
+}
