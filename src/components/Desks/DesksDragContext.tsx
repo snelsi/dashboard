@@ -37,15 +37,7 @@ export const DesksDragContext: React.FC<DesksDragContextProps> = ({
 
     // For each desk with wrong index, update index
     for (let desk of desksWithWrongIndex) {
-      setDeskIndex({
-        variables: { id: desk.id, index: desk.index },
-        optimisticResponse: {
-          update_desk: {
-            id: desk.id,
-            index: desk.index,
-          },
-        },
-      });
+      setDeskIndex({ id: desk.id, index: desk.index });
     }
   };
 

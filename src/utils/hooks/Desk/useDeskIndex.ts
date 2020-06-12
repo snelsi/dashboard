@@ -1,5 +1,9 @@
-import { useMutation, gql } from "@apollo/client";
+import { useMutation, gql, MutationResult } from "@apollo/client";
 
+interface Input {
+  id: number;
+  index: number;
+}
 export interface CHANGE_DESK_INDEX_VALUE {
   update_desk: {
     id: number;
@@ -22,20 +26,38 @@ export const CHANGE_DESK_INDEX = gql`
 /**
  * Returns mutation, that changes index of desk with given id
  */
-export const useDeskIndex = () =>
-  useMutation<CHANGE_DESK_INDEX_VALUE, CHANGE_DESK_INDEX_PROPS>(
-    CHANGE_DESK_INDEX,
-    {
-      update(cache, { data: { update_desk } }) {
-        cache.modify({
-          id: cache.identify({
-            __typename: "desks",
-            id: update_desk.id,
-          }),
-          fields: {
-            index: () => update_desk.index,
-          },
-        });
+export const useDeskIndex = (): [
+  (props: Input) => void,
+  MutationResult<CHANGE_DESK_INDEX_VALUE>
+] => {
+  const [mutation, props] = useMutation<
+    CHANGE_DESK_INDEX_VALUE,
+    CHANGE_DESK_INDEX_PROPS
+  >(CHANGE_DESK_INDEX, {
+    update(cache, { data: { update_desk } }) {
+      cache.modify({
+        id: cache.identify({
+          __typename: "desks",
+          id: update_desk.id,
+        }),
+        fields: {
+          index: () => update_desk.index,
+        },
+      });
+    },
+  });
+
+  const update = ({ id, index }: Input) => {
+    mutation({
+      variables: { id, index },
+      optimisticResponse: {
+        update_desk: {
+          id,
+          index,
+        },
       },
-    }
-  );
+    });
+  };
+
+  return [update, props];
+};
