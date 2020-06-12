@@ -34,7 +34,10 @@ export const DeleteDeskButton: React.FC<DeleteDeskProps> = ({
 
   return (
     <DeleteButton data-hidden={hide}>
-      <TrashButton onClick={() => deleteThisDesk()} disabled={loading} />
+      <TrashButton
+        onClick={() => deleteThisDesk()}
+        disabled={hide || loading}
+      />
     </DeleteButton>
   );
 };
