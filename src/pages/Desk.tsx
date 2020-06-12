@@ -42,7 +42,7 @@ export const DeskOverview: React.FC = () => {
   return (
     <DeskDragContext id={id}>
       <Header>
-        <div>
+        <div className="left">
           <BackButton to="/" />
           {data?.desk ? (
             <DeskName id={data.desk.id} initialName={data.desk.name} />
@@ -51,7 +51,7 @@ export const DeskOverview: React.FC = () => {
           )}
         </div>
 
-        <div>
+        <div className="right">
           {loading && <div>Loading...</div>}
           {data?.desk && (
             <DeleteDeskButton id={id} hide={!(data.desk.groups.length === 0)} />

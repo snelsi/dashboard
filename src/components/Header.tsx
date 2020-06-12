@@ -9,8 +9,20 @@ export const Header = styled.div`
   justify-content: space-between;
   padding: 0 20px;
 
+  overflow: auto;
+
   & > div {
     align-items: center;
     display: flex;
+  }
+  & > div.left {
+    width: 100%;
+    & > input {
+      max-width: 400px;
+      width: fill-available;
+    }
+  }
+  & > div.right {
+    width: fit-content;
   }
 `;
