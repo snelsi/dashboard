@@ -100,15 +100,7 @@ export const DeskDragContext: React.FC<DeskDragContextProps> = ({
 
     // For each task with wrong index, update index
     for (let task of tasksWithWrongIndex) {
-      setTaskIndex({
-        variables: { id: task.id, index: task.index },
-        optimisticResponse: {
-          update_task: {
-            id: task.id,
-            index: task.index,
-          },
-        },
-      });
+      setTaskIndex({ id: task.id, index: task.index });
     }
 
     // If element was moved between groups, update group_id
