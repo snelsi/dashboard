@@ -9,4 +9,5 @@ export const useDesk = (id: number) =>
     variables: {
       id,
     },
+    pollInterval: 2000,
   });
