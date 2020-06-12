@@ -2040,10 +2040,10 @@
   resolved "https://registry.yarnpkg.com/@zeit-ui/react-icons/-/react-icons-1.2.2.tgz#92f8474c986b0a0f9f8afc30e354ac3d54631813"
   integrity sha512-O0BVU6c9yLyW64DNN7+ovn3s+BtysQcxqKIWVofSnjbToTXaAob5BZXoV+QpEWrUod3olTzJzdw9/D3ha1YMiw==
 
-"@zeit-ui/react@1.7.0-canary.3":
-  version "1.7.0-canary.3"
-  resolved "https://registry.yarnpkg.com/@zeit-ui/react/-/react-1.7.0-canary.3.tgz#06f15a46d6658a02373b56852ec76ab57d853d5b"
-  integrity sha512-iO7oW2+iEK6pmrXb/mCWkjbHUdDQJgZWGHDy7UHeNous/nGIigK/PxTCUvKIJ5t0dFZoQUNJ/qHflFFZWyxbUg==
+"@zeit-ui/react@1.7.0-canary.4":
+  version "1.7.0-canary.4"
+  resolved "https://registry.yarnpkg.com/@zeit-ui/react/-/react-1.7.0-canary.4.tgz#b8ac255dc8708a5564162953e6339ed5e928ae9c"
+  integrity sha512-HGoK1uborzP/ejBt6/BgEf5sfCUa6IjneEYbForbWeH8pS9On0m9YSoyE3EPk82XwR6JH9paz9JALEadYJVIkA==
   dependencies:
     styled-jsx "^3.2.5"
 
