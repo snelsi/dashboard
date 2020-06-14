@@ -70,6 +70,7 @@ export const CreateTaskModalForm: React.FC<CreateTaskModalFormProps> = ({
             <Select.Option value="Planned">Planned</Select.Option>
             <Select.Option value="In Progress">In Progress</Select.Option>
             <Select.Option value="Done">Done</Select.Option>
+            <Select.Option value="Failed">Failed</Select.Option>
           </Select>
         </div>
         {error && <Text type="error">{error.message}</Text>}

@@ -21,4 +21,4 @@ export interface ITask {
   updated_at: Date;
 }
 
-export type Status = "Planned" | "In Progress" | "Done";
+export type Status = "Planned" | "In Progress" | "Done" | "Failed";

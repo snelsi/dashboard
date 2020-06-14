@@ -6,7 +6,7 @@ interface StatusProps {
 }
 
 export const Status = styled.div<StatusProps>`
-  background-color: #51e898;
+  background-color: #ff9e25;
   border-radius: 4px;
   height: 8px;
   margin: 0 4px 4px 0;
@@ -15,7 +15,13 @@ export const Status = styled.div<StatusProps>`
   &[data-status="planned" i] {
     background-color: #6287ff;
   }
+  &[data-status="in progress" i] {
+    background-color: #ff9e25;
+  }
   &[data-status="done" i] {
+    background-color: #51e898;
+  }
+  &[data-status="failed" i] {
     background-color: #ff3131;
   }
 `;
