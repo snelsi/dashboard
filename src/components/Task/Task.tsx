@@ -21,6 +21,12 @@ const Wrapper = styled.div`
   padding: 0.5em 1em;
   position: relative;
   overflow: hidden;
+
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `;
 
 const Tag = styled.div`
