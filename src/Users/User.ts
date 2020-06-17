@@ -20,3 +20,12 @@ export class User {
     return this.userRole;
   }
 }
+
+export abstract class UserDecorator extends User {
+  protected user: User;
+
+  public constructor(role: SystemRole, user: User) {
+    super(role);
+    this.user = user;
+  }
+}
