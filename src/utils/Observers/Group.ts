@@ -2,13 +2,9 @@ import { Observer, Subject } from "interfaces";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-/**
- * Издатель владеет некоторым важным состоянием и оповещает наблюдателей о его
- * изменениях.
- */
 export class GroupSubject implements Subject {
   /**
-   * Состояние Издателя
+   * Внутреннее состояние группы
    */
   private state = 1;
 
@@ -19,9 +15,6 @@ export class GroupSubject implements Subject {
 
   public getState = () => this.state;
 
-  /**
-   * Методы управления подпиской.
-   */
   public attach(observer: Observer): void {
     const isExist = this.observers.includes(observer);
     if (isExist) {
@@ -42,9 +35,6 @@ export class GroupSubject implements Subject {
     console.log("Subject: Detached an observer.");
   }
 
-  /**
-   * Запуск обновления в каждом подписчике.
-   */
   public notify(): void {
     console.log("Subject: Notifying observers...");
     for (const observer of this.observers) {
@@ -52,12 +42,13 @@ export class GroupSubject implements Subject {
     }
   }
 
+  // Пример бизнес-логики
   public async update() {
     console.log("Group: Updating...");
     this.state = 2;
     this.notify();
 
-    // simulate loading
+    // Симулировать загрузку
     await delay(3000);
 
     console.log(`Group: Updated`);
