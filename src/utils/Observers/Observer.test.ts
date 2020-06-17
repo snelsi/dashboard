@@ -24,7 +24,6 @@ test("Observer updates state and notifies subscribers", () => {
     expect(state).toEqual(1);
     expect(consoleOutput).toHaveLength(4);
     expect(consoleOutput.includes("Group: Updating...")).toBe(true);
-    expect(consoleOutput.includes("Group: Updating...")).toBe(true);
     expect(task.isLocked()).toEqual(false);
   });
 });
