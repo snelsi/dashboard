@@ -22,3 +22,9 @@ export interface ITask {
 }
 
 export type Status = "Planned" | "In Progress" | "Done" | "Failed";
+
+export enum SystemRole {
+  User = "User",
+  Moderator = "Moderator",
+  Admin = "Admin",
+}
